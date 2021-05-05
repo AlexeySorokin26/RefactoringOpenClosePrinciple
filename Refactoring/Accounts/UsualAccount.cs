@@ -1,6 +1,6 @@
 ﻿namespace Refactoring
 {
-    public class UsualAccount : ICalculateInterest
+    public class UsualAccount : Account, ICalculateInterest
     {
 
         public void CalculateInterest()
@@ -14,6 +14,13 @@
                 Interest -= Balance * 0.4;
         }
 
+        public UsualAccount(string Type, double Balance, double Interest) :
+            base(Type, Balance, Interest)
+        {
+            
+        }
+
+        /*
         public UsualAccount(string Type, double Balance, double Interest)
         {
             this.Type = Type;
@@ -21,6 +28,7 @@
             this.Interest = Interest;
         }
 
+        
         // тип учетной записи
         public string Type { get; set; }
 
@@ -29,5 +37,6 @@
 
         // процентная ставка
         public double Interest { get; set; }
+        */
     }
 }
